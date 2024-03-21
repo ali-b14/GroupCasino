@@ -1,4 +1,5 @@
 package com.github.zipcodewilmington.UtilTests;
+import com.github.zipcodewilmington.casino.Accounts.CasinoAccount;
 import com.github.zipcodewilmington.utils.FileReader;
 import org.junit.Test;
 import org.junit.Assert;
@@ -31,4 +32,36 @@ public class FileReaderTest {
         Assert.assertTrue(actual);
     }
 
+    @Test
+    public void fileWriterTest1() throws FileNotFoundException {
+        FileReader fileReader = new FileReader();
+        CasinoAccount newAccount = new CasinoAccount("lorimerjohnson", "pwtsor");
+        fileReader.writeFile(newAccount);
+
+        boolean actual = fileReader.readFile("lorimerjohnson", "pwtsor");
+
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void fileWriterTest2() throws FileNotFoundException {
+        FileReader fileReader = new FileReader();
+        CasinoAccount newAccount = new CasinoAccount("coolpanda3", "97Gb$s4");
+        fileReader.writeFile(newAccount);
+
+        boolean actual = fileReader.readFile("coolpanda3", "97Gb$s4");
+
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void fileWriterTest3() throws FileNotFoundException {
+        FileReader fileReader = new FileReader();
+        CasinoAccount newAccount = new CasinoAccount("b.runnicle24", "yRszDtK");
+        fileReader.writeFile(newAccount);
+
+        boolean actual = fileReader.readFile("b.runnicle24", "yRszDtK");
+
+        Assert.assertTrue(actual);
+    }
 }

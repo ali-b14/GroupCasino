@@ -20,8 +20,6 @@ public class DeckTests {
     @Test
     public void testInheritance(){
 
-        Cards.Card card = new Cards.Card(Cards.CardValue.TWO, Cards.Suit.CLUBS);
-        System.out.print(card.getCardValue());
         Assert.assertTrue(deck instanceof Stack);
     }
 
@@ -30,6 +28,7 @@ public class DeckTests {
         Cards.Card expected = deck.peek();
 
         Cards.Card actual = deck.pop();
+        Cards.CardValue x = deck.pop().getCardValue();
 
         Assert.assertEquals(expected, actual);
     }
@@ -49,7 +48,6 @@ public class DeckTests {
                 isEqual = false;
             }
         }
-
         Assert.assertFalse(isEqual);
     }
 

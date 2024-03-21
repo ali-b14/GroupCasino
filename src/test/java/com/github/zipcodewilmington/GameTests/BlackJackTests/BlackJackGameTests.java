@@ -1,10 +1,8 @@
 package com.github.zipcodewilmington.GameTests.BlackJackTests;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.github.zipcodewilmington.casino.GameInterface;
 import com.github.zipcodewilmington.casino.games.BlackJack.BlackJackGame;
 import com.github.zipcodewilmington.casino.games.CardClasses.CardGame;
-import com.github.zipcodewilmington.casino.games.CardClasses.CardGamePlayer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,11 +36,6 @@ public class BlackJackGameTests {
 
         String actual = bjg.printRules();
         Assert.assertEquals(expect, actual);
-    }
-
-    @Test
-    public void hit(){
-
     }
 
 }
