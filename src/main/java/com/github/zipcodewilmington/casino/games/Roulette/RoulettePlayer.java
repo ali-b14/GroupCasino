@@ -9,6 +9,7 @@ import com.github.zipcodewilmington.casino.games.slots.SlotsGame;
 public class RoulettePlayer implements PlayerInterface {
 
     private String accountName;
+
     private String accountPassword;
     private double accountBalance;
 
@@ -37,7 +38,6 @@ public class RoulettePlayer implements PlayerInterface {
         rouletteGame.run();
         return "Thank you for playing.";
     }
-
 }
 
 

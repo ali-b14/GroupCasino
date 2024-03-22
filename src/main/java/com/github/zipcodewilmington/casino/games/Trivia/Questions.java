@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Questions {
-    private String answer1 = "Honey";
-    private String answer2 = "Antarctica";
-    private String answer3 = "Java";
-    private String answer4 = "Gangstagrass";
-    private String answer5 = "Earth";
+//    private String answer1 = "Honey";
+//    private String answer2 = "Antarctica";
+//    private String answer3 = "Java";
+//    private String answer4 = "Gangstagrass";
+//    private String answer5 = "Earth";
 
     String[] answerArray = {"Honey", "Antarctica", "Java", "Gangstagrass", "Earth" };
     HashMap<Integer, String> questions = new HashMap<Integer, String>();

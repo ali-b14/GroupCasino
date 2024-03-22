@@ -6,7 +6,7 @@ import com.github.zipcodewilmington.casino.PlayerInterface;
 import java.util.ArrayList;
 
 public abstract class CardGame implements GameInterface {
-    public ArrayList<PlayerInterface> humanPlayers;
+    public ArrayList<CardGamePlayer> humanPlayers;
     public Dealer dealer;
 
     public CardGame(){
@@ -15,7 +15,7 @@ public abstract class CardGame implements GameInterface {
     }
     @Override
     public void add(PlayerInterface player) {
-        humanPlayers.add(player);
+        humanPlayers.add((CardGamePlayer) player);
     }
 
     @Override

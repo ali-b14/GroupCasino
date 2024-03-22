@@ -1,7 +1,6 @@
 package com.github.zipcodewilmington.casino.games.CardClasses;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Dealer {
 
@@ -44,6 +43,52 @@ public class Dealer {
             index += 1;
         }
         return output;
+    }
+
+    public int getHandTotal(){
+        int total = 0;
+
+        for (Cards.Card card : hand) {
+            switch(card.getCardValue()){
+                case ACE:
+                    total += 11;
+                    break;
+                case KING:
+                case JACK:
+                case QUEEN:
+                case TEN:
+                    total += 10;
+                    break;
+                case NINE:
+                    total += 9;
+                    break;
+                case EIGHT:
+                    total += 8;
+                    break;
+                case SEVEN:
+                    total += 7;
+                    break;
+                case SIX:
+                    total += 6;
+                    break;
+                case FIVE:
+                    total += 5;
+                    break;
+                case FOUR:
+                    total += 4;
+                    break;
+                case THREE:
+                    total += 3;
+                    break;
+                case TWO:
+                    total += 2;
+                    break;
+            }
+        }
+        if(total > 21 && hand.checkIfContainsValue(Cards.CardValue.ACE)){
+            total -= 10;
+        }
+        return total;
     }
 
 }

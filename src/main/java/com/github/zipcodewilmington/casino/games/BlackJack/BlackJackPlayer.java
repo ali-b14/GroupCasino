@@ -1,11 +1,14 @@
 package com.github.zipcodewilmington.casino.games.BlackJack;
 
+import com.github.zipcodewilmington.Casino;
 import com.github.zipcodewilmington.casino.Accounts.CasinoAccount;
+import com.github.zipcodewilmington.casino.PlayerInterface;
 import com.github.zipcodewilmington.casino.games.CardClasses.CardGamePlayer;
 import com.github.zipcodewilmington.casino.games.CardClasses.Cards;
 import com.github.zipcodewilmington.casino.games.CardClasses.Hand;
 
-public class BlackJackPlayer extends CardGamePlayer {
+public class BlackJackPlayer extends CardGamePlayer implements PlayerInterface {
+    Casino casino = new Casino();
     Hand hand;
     double wager;
 
@@ -28,11 +31,13 @@ public class BlackJackPlayer extends CardGamePlayer {
 
     @Override
     public CasinoAccount getArcadeAccount() {
-        return null;
+        return this.casino.getCurrentPlayerAccount();
     }
 
     @Override
     public <SomeReturnType> SomeReturnType play() {
+        BlackJackGame bjg = new BlackJackGame();
+        bjg.run();
         return null;
     }
 
@@ -92,5 +97,18 @@ public class BlackJackPlayer extends CardGamePlayer {
 
     public boolean has21() {
         return getHandTotal() == 21;
+    }
+    public void printHand(){
+        System.out.print("Your hand : ");
+        int index = 1;
+        for(Cards.Card card : hand){
+            if(index < hand.size()) {
+                System.out.print(card.getCardValue() + " of " + card.getSuit() + ", ");
+            }
+            else {
+                System.out.println(card.getCardValue() + " of " + card.getSuit());
+            }
+            index++;
+        }
     }
 }

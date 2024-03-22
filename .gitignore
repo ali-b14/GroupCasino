@@ -563,3 +563,11 @@ MigrationBackup/
 
 thoughtProcess.txt
 src/test/java/com/github/zipcodewilmington/GameTests/RouletteTests
+src/main/java/com/github/zipcodewilmington/Casino.java
+src/main/java/com/github/zipcodewilmington/utils
+src/main/java/com/github/zipcodewilmington/casino/Accounts
+src/main/java/com/github/zipcodewilmington/casino/games/Roulette
+src/main/java/com/github/zipcodewilmington/casino/games/Craps
+src/main/java/com/github/zipcodewilmington/casino/games/Poker
+src/main/java/com/github/zipcodewilmington/casino/games/Trivia
+src/main/java/com/github/zipcodewilmington/casino/games/slots
