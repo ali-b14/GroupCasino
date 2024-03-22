@@ -12,7 +12,11 @@ public class TriviaGame implements GameInterface {
     String printRules = "Welcome to Random Trivia try your luck to see if you can get them all right! ";
 
     IOConsole io = new IOConsole();
+
+    //Created an instance of the Question class, so I can call the hashmap from there.
     Questions questionsInstance = new Questions();
+
+    int scoreCounter;
 
     public TriviaGame() {
     }
@@ -54,11 +58,16 @@ public class TriviaGame implements GameInterface {
 
             String playerAnswer = io.getStringInput("Answer:");
             if(playerAnswer.equalsIgnoreCase(questionsInstance.answerArray[index])){
+                System.out.println("Correct \n");
+                index++;
+                scoreCounter++;
+            }else if (!(playerAnswer.equalsIgnoreCase(questionsInstance.answerArray[index]))){
+                System.out.println("Incorrect " + "\n");
                 index++;
             }
 
         }
-        System.out.printf("You answered %d out of 5 correctly", index);
+        System.out.println(("You answered " + scoreCounter + " out of 5 correctly "));
 //        for(String question: questions.values()){
 //            System.out.println(question);
 //        }
